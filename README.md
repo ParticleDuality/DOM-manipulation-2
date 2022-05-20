@@ -1,7 +1,7 @@
-# Snowpack Tailwind
+<!-- # Snowpack Tailwind -->
 
-> ✨ Bootstrapped with Create Snowpack App (CSA).
-
+> ✨ Imágenes aleatorias de zorritos.
+<!-- 
 Ready-to-go template to create awesome websites using Tailwind on top of Snowpack and autopublish to GitHub pages using GitHub Actions.
 
 - [Quick start](#quick-start)
@@ -79,4 +79,4 @@ Your app is ready to be deployed!
 
 ### Q: What about Eject?
 
-No eject needed! Snowpack guarantees zero lock-in, and CSA strives for the same.
+No eject needed! Snowpack guarantees zero lock-in, and CSA strives for the same. -->
