@@ -5,7 +5,7 @@ const observer = new IntersectionObserver((entries) => {
       console.log(entry)
       let container = entry.target
       let image = container.firstChild
-      
+
       image.src = image.dataset.src
       observer.unobserve(container)
     })

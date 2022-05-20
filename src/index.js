@@ -1,22 +1,4 @@
 import { registerImage } from "./lazy"
-// <div class="p-4">
-//   <img class="mx-auto" width="320" src="https://randomfox.ca/?i=75">
-// </div>
-
-// const createImageNode = () => {
-//   const image = document.createElement('img')
-//   image.className = 'mx-auto'
-//   image.width = '320'
-//   image.src = 'https://randomfox.ca/floof'
-
-//   return image
-// }
-
-// const newImage = createImageNode()
-
-// const mountNode = document.getElementById('images')
-// mountNode.appendChild(newImage)
-
 const container = document.getElementById("images")
 const button = document.getElementById("addImageBtn")
 
@@ -30,22 +12,23 @@ const fetchFox = async function () {
 const addImage = async function (event) {
   const innerContainer = document.createElement("div")
   const img = document.createElement("img")
+
+  innerContainer.className = "my-4 mx-auto bg-gray-200 shadow-lg"
+  innerContainer.style.width = "320px";
+  innerContainer.style.height = "320px";
+  innerContainer.style.borderRadius = '1%'
+  container.appendChild(innerContainer)
+
   const fox = await fetchFox()
 
-  innerContainer.className = "my-4 mx-auto bg-gray-200"
-  innerContainer.style.minHeight = "100px";
-  innerContainer.style.display = "inline-block";
-  innerContainer.style.borderRadius = '1%'
-  innerContainer.appendChild(img)
-
-  // img.class = "mx-auto" 
-  img.style = "width: 320; border-radius: 1%"
   img.dataset.src = `${fox.image}`
+  innerContainer.appendChild(img)
 
   registerImage(innerContainer)
 
-  container.appendChild(innerContainer)
-
+  img.style = "min-width:320px;max-width: 100%; max-height: 100%; border-radius: 1%"
+  img.style.objectFit = 'cover'
+  innerContainer.style.height = 'auto'
 }
 
 button.addEventListener("click", addImage)
